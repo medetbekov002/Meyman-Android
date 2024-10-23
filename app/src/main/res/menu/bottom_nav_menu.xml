@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/_icon"
+        android:title="@string/Поиск"
+        />
+
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/icon2"
+        android:title="@string/Избранные"
+        />
+
+    <item
+        android:id="@+id/navigation_booking"
+        android:icon="@drawable/bag"
+        android:title="@string/Бронирования"
+        />
+
+    <item
+        android:id="@+id/navigation_prof"
+        android:icon="@drawable/icon4"
+        android:title="@string/Профиль"
+        />
+</menu>

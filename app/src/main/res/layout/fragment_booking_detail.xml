@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.booking.booking_detail.BookingDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/blue1"
+            android:elevation="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginStart="@dimen/defaultMargine"
+                android:src="@drawable/arrow_back"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_booking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defaultMargine"
+                android:text="@string/bookings"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/line1_vert"
+                app:layout_constraintTop_toBottomOf="@id/line1_hor" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/finish"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/defaultMargine"
+            android:text="@string/your_booking_house"
+            android:textColor="@color/black"
+            android:textSize="@dimen/defaultTextSizeSmall"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="@dimen/defaultCorner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/defaultPadding">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    app:cardCornerRadius="@dimen/defaultCorner"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <ImageView
+
+                        android:id="@+id/iv_booking"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/ic_launcher_round" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toEndOf="@+id/card_view1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_hotel_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hotel_name"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_star_rating"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/ic_star"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_hotel_grade_value"
+                        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+                        app:layout_constraintTop_toBottomOf="@id/tv_hotel" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="6dp">
+
+                            <TextView
+                                android:id="@+id/tv_hotel_grade_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/yellow"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="1dp"
+                                android:text="@string/_10"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toTopOf="@+id/iv_location"
+                                app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+                                app:layout_constraintTop_toBottomOf="@+id/iv_hotel_star_rating" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/rating"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_hotel_grade_value"
+                            app:layout_constraintStart_toEndOf="@id/tv_hotel_grade_value"
+                            app:layout_constraintTop_toTopOf="@id/tv_hotel_grade_value" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/ic_place_mini" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/address"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="@dimen/defaultMargine"
+            android:background="@color/white"
+            android:elevation="20dp"
+            app:cardCornerRadius="@dimen/defaultCorner"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+            tools:layout_editor_absoluteX="12dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="@dimen/defaultPadding">
+
+                <ImageView
+                    android:id="@+id/iv_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:src="@drawable/calendar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="1.5dp"
+                    android:text="@string/period"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/iv_calendar"
+                    app:layout_constraintTop_toTopOf="@id/iv_calendar" />
+
+                <TextView
+                    android:id="@+id/tv_check_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/check_in"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_calendar" />
+
+                <TextView
+                    android:id="@+id/tv_check_in_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/check_in_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_check_in"
+                    app:layout_constraintStart_toEndOf="@id/tv_check_in"
+                    app:layout_constraintTop_toTopOf="@id/tv_check_in" />
+
+                <TextView
+                    android:id="@+id/tv_check_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/check_out"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_check_in"
+                    app:layout_constraintTop_toBottomOf="@id/tv_check_in" />
+
+                <TextView
+                    android:id="@+id/tv_check_out_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/check_out_date"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_check_out"
+                    app:layout_constraintStart_toEndOf="@id/tv_check_out"
+                    app:layout_constraintTop_toTopOf="@id/tv_check_out" />
+
+                <ImageView
+                    android:id="@+id/iv_breakfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="9dp"
+                    android:src="@drawable/breakfast"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_check_out"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_breakfast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/breakfast_included"
+                    android:textColor="@color/green"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_breakfast"
+                    app:layout_constraintStart_toEndOf="@id/iv_breakfast"
+                    app:layout_constraintTop_toTopOf="@id/iv_breakfast"
+                    tools:ignore="TextContrastCheck" />
+
+                <ImageView
+                    android:id="@+id/iv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/cancel"
+                    app:layout_constraintStart_toStartOf="@id/iv_breakfast"
+                    app:layout_constraintTop_toBottomOf="@id/iv_breakfast"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/free_cancellation_anytime"
+                    android:textColor="@color/green"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_cancel"
+                    app:layout_constraintStart_toEndOf="@id/iv_cancel"
+                    app:layout_constraintTop_toTopOf="@id/iv_cancel"
+                    tools:ignore="TextContrastCheck" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/defaultMargine"
+            android:text="@string/your_booking_1_room"
+            android:textColor="@color/black"
+            android:textSize="@dimen/defaultTextSizeSmall"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:elevation="20dp"
+            app:cardCornerRadius="@dimen/defaultCorner"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:layout_editor_absoluteX="12dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="@dimen/defaultPadding">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="312dp"
+                    android:layout_height="wrap_content"
+                    android:lines="2"
+                    android:text="@string/room_name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/defaultTextSizeSmall"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TextSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/iv_square"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_guests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/square"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_square"
+                    app:layout_constraintStart_toEndOf="@id/iv_square"
+                    app:layout_constraintTop_toTopOf="@id/iv_square"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_room_square"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/_26_m"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_square"
+                    app:layout_constraintStart_toEndOf="@id/tv_guests"
+                    app:layout_constraintTop_toTopOf="@id/iv_square" />
+
+                <ImageView
+                    android:id="@+id/iv_hotel_amenities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/hotel_amenities"
+                    app:layout_constraintStart_toStartOf="@id/iv_square"
+                    app:layout_constraintTop_toBottomOf="@id/iv_square"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_hotel_amenities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/bed_size"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_hotel_amenities"
+                    app:layout_constraintStart_toEndOf="@id/iv_hotel_amenities"
+                    app:layout_constraintTop_toTopOf="@id/iv_hotel_amenities"
+                    tools:ignore="TextContrastCheck" />
+
+                <ImageView
+                    android:id="@+id/iv_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:src="@drawable/wifi"
+                    app:layout_constraintStart_toStartOf="@id/iv_hotel_amenities"
+                    app:layout_constraintTop_toBottomOf="@id/iv_hotel_amenities"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/wifi"
+                    android:textColor="@color/gray3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_wifi"
+                    app:layout_constraintStart_toEndOf="@id/iv_wifi"
+                    app:layout_constraintTop_toTopOf="@id/iv_wifi" />
+
+                <ImageView
+                    android:id="@+id/iv_conditioner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:src="@drawable/conditioner"
+                    app:layout_constraintStart_toEndOf="@id/tv_wifi"
+                    app:layout_constraintTop_toTopOf="@id/iv_wifi"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_conditioner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/conditioner"
+                    android:textColor="@color/gray3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_conditioner"
+                    app:layout_constraintStart_toEndOf="@id/iv_conditioner"
+                    app:layout_constraintTop_toTopOf="@id/iv_conditioner" />
+
+                <ImageView
+                    android:id="@+id/iv_dryer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:src="@drawable/dryer"
+                    app:layout_constraintStart_toEndOf="@id/tv_conditioner"
+                    app:layout_constraintTop_toTopOf="@id/iv_wifi"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_dryer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/dryer"
+                    android:textColor="@color/gray3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_dryer"
+                    app:layout_constraintStart_toEndOf="@id/iv_dryer"
+                    app:layout_constraintTop_toTopOf="@id/iv_dryer" />
+
+                <ImageView
+                    android:id="@+id/iv_bathroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/bathroom"
+                    app:layout_constraintStart_toStartOf="@id/iv_wifi"
+                    app:layout_constraintTop_toBottomOf="@id/iv_wifi"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_bathroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/bathroom"
+                    android:textColor="@color/gray3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_bathroom"
+                    app:layout_constraintStart_toEndOf="@id/iv_bathroom"
+                    app:layout_constraintTop_toTopOf="@id/iv_bathroom" />
+
+                <ImageView
+                    android:id="@+id/iv_city_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:src="@drawable/city_view"
+                    app:layout_constraintStart_toEndOf="@id/tv_bathroom"
+                    app:layout_constraintTop_toTopOf="@id/iv_bathroom"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_city_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/city_view"
+                    android:textColor="@color/gray3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_city_view"
+                    app:layout_constraintStart_toEndOf="@id/iv_city_view"
+                    app:layout_constraintTop_toTopOf="@id/iv_city_view" />
+
+                <ImageView
+                    android:id="@+id/iv_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/tv"
+                    app:layout_constraintStart_toStartOf="@id/iv_wifi"
+                    app:layout_constraintTop_toBottomOf="@id/iv_bathroom"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/tv"
+                    android:textColor="@color/gray3"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_TV"
+                    app:layout_constraintStart_toEndOf="@id/iv_TV"
+                    app:layout_constraintTop_toTopOf="@id/iv_TV" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"
+            android:background="@color/white"
+            android:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="@dimen/defaultCorner"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="@dimen/defaultPadding">
+
+                <TextView
+                    android:id="@+id/tv_payment_on_the_spot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_on_the_spot"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_guests_and_nights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/_1_1"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_payment_on_the_spot"
+                    app:layout_constraintTop_toBottomOf="@id/tv_payment_on_the_spot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Including_taxes_and_fees"
+                    android:textColor="@color/gray3"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_payment_on_the_spot"
+                    app:layout_constraintTop_toBottomOf="@id/tv_guests_and_nights"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tv_cyrrency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/com"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/defaultTextSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_summ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/summ"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/defaultTextSize"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_cyrrency"
+                    app:layout_constraintEnd_toStartOf="@id/tv_cyrrency"
+                    app:layout_constraintTop_toTopOf="@id/tv_cyrrency" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

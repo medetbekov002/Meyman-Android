@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/defaultPadding"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    tools:context=".presentation.ui.screens.favorite.wishlist.addWishlist.AddWishlistFragment">
+
+    <View
+        android:id="@+id/dragHandle"
+        android:layout_width="64dp"
+        android:layout_height="4dp"
+        android:background="@drawable/rounder2"
+        android:backgroundTint="@color/gray2"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_new_wishlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_wishlist"
+        android:textSize="@dimen/defaultTextSize"
+        android:layout_marginTop="@dimen/defaultMargine"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dragHandle"
+        tools:ignore="SpUsage" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gray_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_new_wishlist"
+        app:layout_constraintBottom_toBottomOf="@id/tv_new_wishlist"
+        android:layout_marginStart="8dp"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_wishlist_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/naming"
+        android:layout_marginTop="27dp"
+        app:boxCornerRadiusBottomEnd="@dimen/defaultCorner"
+        app:boxCornerRadiusBottomStart="@dimen/defaultCorner"
+        app:boxCornerRadiusTopEnd="@dimen/defaultCorner"
+        app:boxCornerRadiusTopStart="@dimen/defaultCorner"
+        app:boxStrokeColor="@color/blue1"
+        app:boxStrokeErrorColor="@color/red"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_new_wishlist"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:hintTextColor="@color/blue1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_wishlist_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/defaultTextSizeSmall"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_description_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/defaultMargine"
+        app:layout_constraintStart_toStartOf="@id/til_wishlist_name"
+        app:layout_constraintTop_toBottomOf="@id/til_wishlist_name"
+        android:text="@string/_0_150" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:layout_marginTop="24dp"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_description_count"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/defaultCorner"
+        android:backgroundTint="@color/blue1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.screens.profile.user.change.exitAccount.ExitAccountFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line1_vert"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <View
+        android:id="@+id/dragHandle"
+        android:layout_width="64dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounder2"
+        android:backgroundTint="@color/gray2"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_exit_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit_account"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dragHandle"
+        android:layout_marginTop="16dp"
+        android:textSize="@dimen/defaultTextSize"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:strokeWidth="1dp"
+        android:layout_marginStart="14dp"
+        android:paddingVertical="15dp"
+        android:layout_marginEnd="8dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/line1_vert"
+        app:strokeColor="@color/gray4"
+        android:elevation="0dp"
+        app:backgroundTint="@color/white"
+        android:layout_marginTop="24dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tv_exit_account"
+        android:textSize="@dimen/defaultTextSizeSmall"
+        android:text="@string/cancel"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginEnd="14dp"
+        android:paddingVertical="15dp"
+        android:layout_marginStart="8dp"
+        app:cornerRadius="10dp"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/btn_cancel"
+        app:layout_constraintStart_toStartOf="@id/line1_vert"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/defaultTextSizeSmall"
+        android:text="@string/delete"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
